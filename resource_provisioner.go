@@ -83,6 +83,10 @@ func (r *ResourceProvisioner) Validate(c *terraform.ResourceConfig) (ws []string
 	return ws, es
 }
 
+func (r *ResourceProvisioner) Stop() error {
+	return nil
+}
+
 func (r *ResourceProvisioner) decodeConfig(c *terraform.ResourceConfig) (*Provisioner, error) {
 	// decodes configuration from terraform and builds out a provisioner
 	p := new(Provisioner)
